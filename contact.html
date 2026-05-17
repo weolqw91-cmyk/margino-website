@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - MARGINO</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .contact-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .contact-page .subtitle {
+            color: var(--gray);
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .contact-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            border: 2px solid #f0f0f0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .contact-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        .contact-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        .contact-card a {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 24px;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .contact-card a:hover {
+            background: var(--primary);
+            color: white;
+        }
+        .faq-link {
+            text-align: center;
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+        .faq-link h2 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .faq-link p {
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+        .faq-link a {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .faq-link a:hover {
+            background: var(--primary-dark);
+        }
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-button:hover {
+            text-decoration: underline;
+        }
+        .response-time {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-page">
+        <a href="index.html" class="back-button">← Powrót do strony głównej</a>
+        
+        <h1>Skontaktuj się z nami</h1>
+        <p class="subtitle">Jesteśmy tutaj, aby pomóc. Wybierz najwygodniejszą dla Ciebie formę kontaktu.</p>
+
+        <div class="faq-link">
+            <h2>Szukasz szybkiej odpowiedzi?</h2>
+            <p>Sprawdź naszą sekcję FAQ – możliwe, że odpowiedź na Twoje pytanie już tam jest!</p>
+            <a href="index.html#faq">Zobacz FAQ →</a>
+        </div>
+
+        <div class="contact-methods">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email ogólny</h3>
+                <p>Pytania, sugestie, współpraca</p>
+                <a href="mailto:hello@margino.pl">hello@margino.pl</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🛠️</div>
+                <h3>Wsparcie techniczne</h3>
+                <p>Problemy z rozszerzeniem, błędy</p>
+                <a href="mailto:support@margino.pl">support@margino.pl</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">💰</div>
+                <h3>Płatności i zwroty</h3>
+                <p>Pytania o subskrypcję, faktury</p>
+                <a href="mailto:billing@margino.pl">billing@margino.pl</a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">🔒</div>
+                <h3>Prywatność i RODO</h3>
+                <p>Ochrona danych osobowych</p>
+                <a href="mailto:privacy@margino.pl">privacy@margino.pl</a>
+            </div>
+        </div>
+
+        <div class="faq-link" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: white;">
+            <h2 style="color: white;">Potrzebujesz pomocy z konfiguracją?</h2>
+            <p style="color: rgba(255,255,255,0.9);">Skontaktuj się z nami, a pomożemy Ci w pełni wykorzystać możliwości MARGINO.</p>
+            <a href="mailto:support@margino.pl" style="background: white; color: var(--primary);">Napisz do supportu →</a>
+        </div>
+
+        <div class="response-time">
+            <p><strong>Czas odpowiedzi:</strong></p>
+            <p>Wersja darmowa: do 48 godzin | Wersja PRO: do 12 godzin (priorytetowo)</p>
+            <p>Odpowiadamy w dni robocze (pon-pt, 9:00-17:00 CET)</p>
+        </div>
+
+        <div style="margin-top: 60px; padding-top: 40px; border-top: 2px solid #f0f0f0; text-align: center;">
+            <h2 style="margin-bottom: 20px;">Dziękujemy za wybór MARGINO!</h2>
+            <p style="color: var(--gray); margin-bottom: 20px;">Twoje opinie i sugestie pomagają nam się rozwijać.</p>
+            <a href="index.html" class="back-button">← Powrót do strony głównej</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span class="logo-text">MARGINO</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Polityka Prywatności</a>
+                    <a href="terms.html">Regulamin</a>
+                    <a href="contact.html">Kontakt</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MARGINO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
