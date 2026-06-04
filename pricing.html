@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cennik - MARGINO PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-page {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .pricing-page h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .pricing-page .subtitle {
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        /* PLAN CARD */
+        .plan-card {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 24px;
+            padding: 50px 48px;
+            max-width: 520px;
+            margin: 0 auto 40px;
+            box-shadow: 0 8px 40px rgba(255, 107, 53, 0.15);
+            position: relative;
+        }
+        .plan-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 7px 24px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+        .plan-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .plan-price {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .plan-price sup {
+            font-size: 1.5rem;
+            vertical-align: super;
+            font-weight: 700;
+        }
+        .plan-price span {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gray);
+        }
+        .plan-period {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 36px;
+        }
+        .plan-features {
+            list-style: none;
+            margin: 0 0 36px;
+            padding: 0;
+            text-align: left;
+        }
+        .plan-features li {
+            padding: 11px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 0.97rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .plan-features li:last-child { border-bottom: none; }
+        .plan-features li .check { color: #22c55e; font-size: 1.1rem; flex-shrink: 0; }
+        .plan-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.35);
+            transition: all 0.3s;
+        }
+        .plan-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(255, 107, 53, 0.45);
+        }
+
+        /* TRIAL BOX */
+        .trial-alt {
+            background: var(--light-gray);
+            border-radius: 20px;
+            padding: 36px 40px;
+            max-width: 520px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        .trial-alt h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .trial-alt p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .trial-alt a {
+            display: inline-block;
+            padding: 14px 32px;
+            border: 2px solid var(--dark);
+            border-radius: 10px;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.97rem;
+        }
+        .trial-alt a:hover {
+            background: var(--dark);
+            color: white;
+        }
+
+        /* GUARANTEE */
+        .guarantee-box {
+            background: linear-gradient(135deg, #fff7f3 0%, #fff 100%);
+            border: 2px solid #ffe0d0;
+            border-radius: 20px;
+            padding: 36px 40px;
+            max-width: 520px;
+            margin: 0 auto 50px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            text-align: left;
+        }
+        .guarantee-icon { font-size: 3rem; flex-shrink: 0; }
+        .guarantee-box h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .guarantee-box p { color: var(--gray); line-height: 1.7; margin: 0; font-size: 0.95rem; }
+
+        /* FAQ */
+        .pricing-faq {
+            text-align: left;
+            max-width: 620px;
+            margin: 0 auto 60px;
+        }
+        .pricing-faq h2 {
+            font-size: 1.9rem;
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .faq-item2 {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 20px 0;
+        }
+        .faq-item2:last-child { border-bottom: none; }
+        .faq-q { font-weight: 700; font-size: 1rem; margin-bottom: 8px; color: var(--dark); }
+        .faq-a { color: var(--gray); line-height: 1.7; font-size: 0.95rem; }
+        .faq-a a { color: var(--primary); text-decoration: none; }
+        .faq-a a:hover { text-decoration: underline; }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-button:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .plan-card, .trial-alt, .guarantee-box { padding: 36px 24px; }
+            .guarantee-box { flex-direction: column; text-align: center; }
+            .pricing-page h1 { font-size: 2rem; }
+            .plan-price { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-page">
+        <a href="index.html" class="back-button">← Powrót do strony głównej</a>
+
+        <h1>MARGINO PRO</h1>
+        <p class="subtitle">Pełna moc analizy Allegro. Anuluj kiedy chcesz.</p>
+
+        <!-- PRO PLAN -->
+        <div class="plan-card">
+            <div class="plan-badge">🔥 NAJPOPULARNIEJSZY</div>
+            <div class="plan-name">PRO</div>
+            <div class="plan-price"><sup></sup>49<span style="font-size:2rem">.99</span> <span>zł</span></div>
+            <div class="plan-period">miesięcznie · anuluj kiedy chcesz</div>
+            <ul class="plan-features">
+                <li><span class="check">✓</span> Kalkulator marży i zysku</li>
+                <li><span class="check">✓</span> Opportunity Score (0–100)</li>
+                <li><span class="check">✓</span> Analiza konkurencji</li>
+                <li><span class="check">✓</span> Nieograniczona historia obliczeń</li>
+                <li><span class="check">✓</span> Eksport danych do CSV / Excel</li>
+                <li><span class="check">✓</span> Zaawansowane raporty i analizy</li>
+                <li><span class="check">✓</span> Tryb Research na listach produktów</li>
+                <li><span class="check">✓</span> Priorytetowe wsparcie (odpowiedź &lt;12h)</li>
+                <li><span class="check">✓</span> Dostęp do nowych funkcji jako pierwszy</li>
+                <li><span class="check">✓</span> 14-dniowa gwarancja zwrotu pieniędzy</li>
+            </ul>
+            <a href="https://margino.lemonsqueezy.com/checkout/buy/9bf44c82-ffc5-4887-ba1c-dec40106971b" target="_blank" class="plan-btn">
+                Kup teraz – 49,99 zł/mies. →
+            </a>
+        </div>
+
+        <!-- TRIAL -->
+        <div class="trial-alt">
+            <h3>Chcesz najpierw wypróbować?</h3>
+            <p>Pobierz rozszerzenie i aktywuj 7-dniowy trial — bez karty kredytowej, bez zobowiązań.</p>
+            <a href="index.html#trial">Zacznij trial za darmo →</a>
+        </div>
+
+        <!-- GUARANTEE -->
+        <div class="guarantee-box">
+            <div class="guarantee-icon">🛡️</div>
+            <div>
+                <h3>14-dniowa gwarancja zwrotu pieniędzy</h3>
+                <p>Jeśli MARGINO PRO nie spełni Twoich oczekiwań w ciągu 14 dni od zakupu — zwrócimy Ci pełną kwotę, bez pytań. Wystarczy napisać na <a href="mailto:call2margino@gmail.com" style="color:var(--primary)">call2margino@gmail.com</a>.</p>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="pricing-faq">
+            <h2>Często zadawane pytania</h2>
+
+            <div class="faq-item2">
+                <div class="faq-q">Jak aktywować klucz PRO?</div>
+                <div class="faq-a">Po opłaceniu subskrypcji otrzymasz klucz licencyjny na adres email podany przy zakupie. Otwórz rozszerzenie MARGINO w Chrome, wklej klucz w pole aktywacji i kliknij "Aktywuj". Gotowe — PRO aktywuje się natychmiast.</div>
+            </div>
+
+            <div class="faq-item2">
+                <div class="faq-q">Kiedy mogę anulować subskrypcję?</div>
+                <div class="faq-a">W dowolnym momencie — bez opłat za anulowanie i bez pytań. Po anulowaniu masz dostęp do funkcji PRO do końca opłaconego okresu. Możesz zarządzać subskrypcją przez link w emailu z potwierdzeniem zakupu.</div>
+            </div>
+
+            <div class="faq-item2">
+                <div class="faq-q">Jak działa przedłużanie subskrypcji?</div>
+                <div class="faq-a">Subskrypcja odnawia się automatycznie co miesiąc. Na 3 dni przed odnowieniem otrzymasz przypomnienie emailem. Możesz anulować w każdej chwili przed datą odnowienia.</div>
+            </div>
+
+            <div class="faq-item2">
+                <div class="faq-q">Jakie metody płatności są dostępne?</div>
+                <div class="faq-a">Akceptujemy karty Visa, Mastercard oraz PayPal. Płatności obsługuje Lemon Squeezy — bezpieczny operator płatności stosowany przez tysiące firm SaaS na całym świecie.</div>
+            </div>
+
+            <div class="faq-item2">
+                <div class="faq-q">Co się stanie, jeśli nie dostanę klucza po zakupie?</div>
+                <div class="faq-a">Klucz wysyłany jest automatycznie po potwierdzeniu płatności. Jeśli nie pojawi się w ciągu kilku minut, sprawdź folder spam. Problemy? Napisz do nas: <a href="mailto:call2margino@gmail.com">call2margino@gmail.com</a> — odpowiemy w ciągu 12 godzin.</div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button">← Powrót do strony głównej</a>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">✨</span>
+                    <span class="logo-text">MARGINO</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Polityka Prywatności</a>
+                    <a href="terms.html">Regulamin</a>
+                    <a href="contact.html">Kontakt</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MARGINO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
